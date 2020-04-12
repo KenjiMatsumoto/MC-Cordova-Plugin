@@ -348,6 +348,14 @@ const int LOG_LENGTH = 800;
                                 callbackId:command.callbackId];
 }
 
+- (void)getDeviceId:(CDVInvokedUrlCommand *)command {
+    NSString *deviceId = [[MarketingCloudSDK sharedInstance] sfmc_deviceIdentifier];
+
+    [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK
+                                                             messageAsString:deviceId]
+                                callbackId:command.callbackId];
+}
+
 - (void)addTag:(CDVInvokedUrlCommand *)command {
     NSString *tag = command.arguments[0];
 

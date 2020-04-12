@@ -115,6 +115,10 @@ var MCCordovaPlugin = {
         argsCheck.checkArgs('fF', `${PLUGIN_NAME}.getSystemToken`, arguments);
         _exec(successCallback, errorCallback, 'getSystemToken');
     },
+    getDeviceId: function(successCallback, errorCallback) {
+        argsCheck.checkArgs('fF', `${PLUGIN_NAME}.getDeviceId`, arguments);
+        _exec(successCallback, errorCallback, 'getDeviceId');
+    },
     /**
      * Returns the maps of attributes set in the registration.
      * @param  {function(attributes)} successCallback

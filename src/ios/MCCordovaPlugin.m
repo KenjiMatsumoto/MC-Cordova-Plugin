@@ -273,7 +273,7 @@ const int LOG_LENGTH = 800;
 
 - (void)getSystemToken:(CDVInvokedUrlCommand *)command {
     NSString *systemToken = [[MarketingCloudSDK sharedInstance] sfmc_deviceToken];
-
+    NSLog(@"Show Console Log : %@" , systemToken);
     [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK
                                                              messageAsString:systemToken]
                                 callbackId:command.callbackId];
@@ -350,7 +350,7 @@ const int LOG_LENGTH = 800;
 
 - (void)getDeviceId:(CDVInvokedUrlCommand *)command {
     NSString *deviceId = [[MarketingCloudSDK sharedInstance] sfmc_deviceIdentifier];
-
+    NSLog(@"Show Console Log 2: %@" , deviceId);
     [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK
                                                              messageAsString:deviceId]
                                 callbackId:command.callbackId];

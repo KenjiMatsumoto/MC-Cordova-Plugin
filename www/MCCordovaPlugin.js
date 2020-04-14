@@ -38,18 +38,20 @@ var onNotificationOpened;
 var onUrlAction;
 
 function registerEvents() {
-    var onEventsCallback = function(event) {
-        switch (event.type) {
-            case 'notificationOpened':
-                if (onNotificationOpened !== undefined) {
-                    onNotificationOpened(event);
-                }
-                break;
-            case 'urlAction':
-                if (onUrlAction !== undefined) {
-                    onUrlAction(event);
-                }
-        }
+    console.log('registerEvents');
+    const onEventsCallback = function(event) {
+      console.log(event.type);
+      switch (event.type) {
+        case 'notificationOpened':
+          if (onNotificationOpened !== undefined) {
+            onNotificationOpened(event);
+          }
+          break;
+        case 'urlAction':
+          if (onUrlAction !== undefined) {
+            onUrlAction(event);
+          }
+      }
     };
 
     _exec(onEventsCallback, null, 'registerEventsChannel');

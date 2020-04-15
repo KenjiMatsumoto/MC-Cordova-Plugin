@@ -53,7 +53,8 @@ function registerEvents() {
           }
       }
     };
-
+    console.log(onEventsCallback);
+    console.log('registerEvents End');
     _exec(onEventsCallback, null, 'registerEventsChannel');
 }
 
@@ -265,6 +266,7 @@ var MCCordovaPlugin = {
     setOnNotificationOpenedListener: function(notificationOpenedListener) {
         argsCheck.checkArgs('f', `${PLUGIN_NAME}.setOnNotificationOpenedListener`, arguments);
         onNotificationOpened = notificationOpenedListener;
+        console.log(onNotificationOpened);
         _exec(undefined, undefined, 'subscribe', ['notificationOpened']);
     },
 

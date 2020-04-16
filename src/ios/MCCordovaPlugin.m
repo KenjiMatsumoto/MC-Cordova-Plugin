@@ -273,7 +273,9 @@ const int LOG_LENGTH = 800;
 
 - (void)getSystemToken:(CDVInvokedUrlCommand *)command {
     NSString *systemToken = [[MarketingCloudSDK sharedInstance] sfmc_deviceToken];
+    NSString *systemToken2 = [[MarketingCloudSDK sharedInstance] sfmc_deviceToken];
     NSLog(@"Show Console Log : %@" , systemToken);
+    NSLog(@"Show Console Log : %@" , systemToken2);
     [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK
                                                              messageAsString:systemToken]
                                 callbackId:command.callbackId];
